@@ -12,36 +12,37 @@ To write a python program to perform stop and wait protocol
 # CLIENT
 ```py
 import socket
-from datetime import datetime
 s=socket.socket()
-s.bind(('localhost',8001))
+s.bind(('localhost', 8000))
 s.listen(5)
 c,addr=s.accept()
-print("Client Address : ",addr)
-now = datetime.now()
-c.send(now.strftime("Date: %d/%m/%Y and Time: %H:%M:%S").encode())
-ack=c.recv(1024).decode()
-if ack:
- print(ack)
-c.close()
+while True:
+    i=input("Enter a data: ")
+    c.send(i.encode())
+    ack=c.recv(1024).decode()
+    if ack:
+        print(ack)
+        continue
+    else:
+        c.close()
+        break
 
 ```
 # SERVER
 ```py
 import socket
 s=socket.socket()
-s.connect(('localhost',8001))
-print(s.getsockname())
-print(s.recv(1024).decode())
-s.send("acknowledgement recived from the server".encode())
-
+s.connect(('localhost', 8000))
+while True:
+    print(s.recv(1024).decode())
+    s.send("Acknowledgement Recived".encode())
 ```
 ## OUTPUT
 # CLIENT OUTPUT
-![](./client.png)
+![](./CLIENT.png)
 
 # SERVER OUTPUT
-![](./server.png)
+![](./SERVER.png)
 
 ## RESULT
 Thus, python program to perform stop and wait protocol was successfully executed.
