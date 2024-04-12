@@ -26,7 +26,6 @@ while True:
     else:
         c.close()
         break
-
 ```
 # SERVER
 ```py
