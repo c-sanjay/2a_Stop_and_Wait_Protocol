@@ -40,10 +40,11 @@ while True:
 ```
 ## OUTPUT
 ### CLIENT OUTPUT
-![](./CLIENT.png)
+![CLIENT](https://github.com/c-sanjay/2a_Stop_and_Wait_Protocol/assets/147139405/083f9ced-4a81-4324-8cb4-f4d73a442a39)
 
 ### SERVER OUTPUT
-![](./SERVER.png)
+![SERVER](https://github.com/c-sanjay/2a_Stop_and_Wait_Protocol/assets/147139405/28f3d13a-6ded-4b48-bcbd-e825661904b6)
+
 
 ## RESULT
 
